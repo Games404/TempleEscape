@@ -8,6 +8,15 @@
 		<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 	</head>
 <body>
+  <div class="wrap">
+    <div class="add-btn">
+      <div class="plus"></div>
+      <div class="text">
+        <span class="add-text" onclick="vkBridge.send('VKWebAppShowInviteBox', {});">Добавить</span> друзей
+      </div>
+    </div> 
+  </div>
+
 	<div id="gameContainer">
 		<canvas id="unity-canvas"></canvas>
 
@@ -25,9 +34,8 @@
 
     showFullscrenAd();
     function showFullscrenAd() {
-	vkBridge.send("VKWebAppShowNativeAds", {ad_format:"interstitial"});
+	    vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
     }
-// 	  vkBridge.send("VKWebAppShowInviteBox", {});
   </script>
 	<script src="Build/dist.loader.js"></script>
 	<script>
@@ -72,15 +80,15 @@
 					h = window.innerHeight - 90;
 				}
 
-				var r = 1920 / 1080;
+				var r = 640 / 1136;
 
 				if (w * r > window.innerHeight) {
 					w = Math.min(w, Math.ceil(h / r));
 				}
 				h = Math.floor(w * r);
 			}else {
-				w = 1080;
-				h = 1920;
+				w = 1136;
+				h = 640;
 			}
 
 			if(window.innerWidth > 991){
