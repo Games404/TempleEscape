@@ -80,15 +80,15 @@
 				w = document.body.clientWidth;
 				h = document.body.clientHeight;
 
-				var r = 1080 / 1920;
+				var r = 1920 / 1080;
 
 				if (w * r > document.body.clientHeight) {
 					w = Math.min(w, Math.ceil(h / r));
 				}
 				h = Math.floor(w * r);
 			}else {
-				w = 1920;
-				h = 1080;
+				w = 1080;
+				h = 1920;
 			}
 
 			if(document.body.clientWidth > 991){
