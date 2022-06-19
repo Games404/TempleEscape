@@ -8,15 +8,6 @@
 		<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 	</head>
 <body>
-  <div class="wrap">
-    <div class="add-btn">
-      <div class="plus"></div>
-      <div class="text">
-        <span class="add-text" onclick="vkBridge.send('VKWebAppShowInviteBox', {});">Добавить</span> друзей
-      </div>
-    </div> 
-  </div>
-
 	<div id="gameContainer">
 		<canvas id="unity-canvas"></canvas>
 
@@ -41,6 +32,9 @@
         vkBridgeInit = true;
       }
     }
+    function ShowInviteBox(){
+      vkBridge.send('VKWebAppShowInviteBox', {});
+    }
   </script>
 	<script src="Build/dist.loader.js"></script>
 	<script>
@@ -54,13 +48,13 @@
 		loadingBar.style.display = "block";
 
 		var config = {
-        dataUrl: "Build/dist.data",
-        frameworkUrl: "Build/dist.framework.js",
-        codeUrl: "Build/dist.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Games404",
-        productName: "TempleEscape",
-        productVersion: "0.0.1"
+			dataUrl: "Build/dist.data",
+			frameworkUrl: "Build/dist.framework.js",
+			codeUrl: "Build/dist.wasm",
+			streamingAssetsUrl: "StreamingAssets",
+			companyName: "Games404",
+			productName: "TempleEscape",
+			productVersion: "0.0.1"
 		};
 
 		var scaleToFit;
@@ -79,11 +73,7 @@
 
 			if(scaleToFit){
 				w = window.innerWidth;
-				if(window.innerWidth > 991){
-					h = window.innerHeight;
-				}else {
-					h = window.innerHeight - 90;
-				}
+				h = window.innerHeight;
 
 				var r = 1136 / 640;
 
@@ -109,7 +99,6 @@
 
 				canvas.style.width = w + "px";
 				canvas.style.height = h + "px";
-				rtb_mobile.style.height = (window.innerHeight - canvas.offsetHeight) + "px";
 
 				gameContainer.focus();
 				window.focus();
