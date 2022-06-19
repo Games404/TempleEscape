@@ -9,7 +9,7 @@
 	</head>
 <body>
 	<div id="gameContainer">
-		<canvas id="unity-canvas"></canvas>
+		<canvas width="100%" height="100%" id="unity-canvas"></canvas>
 
 		<div id="unity-loading-bar">
 		<div id="unity-logo"></div>
@@ -113,10 +113,10 @@
 			window.unityInstance = instance;
 			canvas = instance.Module.canvas;
 			loadingBar.style.display = "none";
-			onResize();
+// 			onResize();
 		});
-		window.addEventListener('resize', onResize);
-		onResize();
+// 		window.addEventListener('resize', onResize);
+// 		onResize();
 
 
 		// focus
