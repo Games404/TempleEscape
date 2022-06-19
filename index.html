@@ -26,7 +26,7 @@
 	var vkBridgeInitAdCounter = 0;
     function showFullscrenAd() {
 		if(vkBridgeInitAdCounter == 0){
-// 			vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
+			vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
 		}
 		vkBridgeInitAdCounter++;
 		if(vkBridgeInitAdCounter == 5){
