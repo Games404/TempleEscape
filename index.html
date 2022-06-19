@@ -30,11 +30,16 @@
 
   <script>
     // vk SDK
+    var vkBridgeInit = false;
     vkBridge.send('VKWebAppInit');
+    vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
 
-    showFullscrenAd();
     function showFullscrenAd() {
-	    vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
+      if(vkBridgeInit){
+        vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
+      }else {
+        vkBridgeInit = true;
+      }
     }
   </script>
 	<script src="Build/dist.loader.js"></script>
