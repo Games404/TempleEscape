@@ -5,9 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="TemplateData/style.css">
-		<script src="https://yandex.ru/games/sdk/v2"></script>
-		<script>YaGames.init().then(yaSdk => {window.yaSdk = yaSdk;yaSdk.adv.showFullscreenAdv();})</script>
-		<script src="https://yandex.ru/ads/system/context.js" async></script>
+		<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 	</head>
 <body>
 	<div id="gameContainer">
@@ -21,6 +19,15 @@
 		</div>
 	</div>
 
+  <script>
+    // vk SDK
+    vkBridge.send('VKWebAppInit');
+
+    showFullscrenAd();
+    function showFullscrenAd() {
+      vkBridge.send("VKWebAppShowInviteBox", {});
+    }
+  </script>
 	<script src="Build/dist.loader.js"></script>
 	<script>
 		var body = document.querySelector("body");
