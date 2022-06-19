@@ -17,18 +17,78 @@ body { padding: 0; margin: 0; background:#eee; }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; -webkit-transform: translate(-50%); -moz-transform: translate(-50%); -ms-transform: translate(-50%); -o-transform: translate(-50%); transform: translate(-50%); background: white; padding: 10px; display: none }
-.context-fixed-desktop{position:absolute;width:250px;height:500px;top:50%;transform:translate(0,-50%)}
-.context-fixed-desktop__left{left:0}.context-fixed-desktop__right{right:0}
-@media(max-width: 1200px){
-    .context-fixed-desktop {
-        width:200px;
-        height:400px;
-    }
-}
 @media(max-width: 991px){
     body { -webkit-touch-callout: none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
-    .rtb-bottom-wrapper-desktop { display: none; }
-    .context-fixed-desktop { width:200px; }
-    .rtb-bottom-wrapper-mobile { position: absolute; left: 0; top: 0; width: 100%; height: 90px;  }
     #gameContainer canvas { position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); } 
 }
+.wrap .add-btn {
+    width: 130px;
+    height: 20px;
+    padding: 8px 20px;
+    background: #f6f7f9;
+    border: 1px solid #4b4f56;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .wrap .add-btn:hover {
+    background: #e9ebee;
+  }
+  .wrap .add-btn .plus {
+    width: 16px;
+    height: 2px;
+    margin-top: 10px;
+    background: #4b4f56;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.5s;
+  }
+  .wrap .add-btn .plus:before {
+    margin: -7px 0 0 7px;
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    background: #4b4f56;
+    transition: margin 0.5s;
+  }
+  .wrap .add-btn .plus.tick {
+    transform: translateX(6px) rotate(-45deg);
+  }
+  .wrap .add-btn .plus.tick:before {
+    height: 8px;
+    margin: -7px 0 0 0;
+  }
+  .wrap .add-btn .text {
+    margin: 0 5px;
+    display: inline-block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", sans-serif;
+    line-height: 20px;
+    vertical-align: top;
+    color: #4b4f56;
+  }
+  .wrap .add-btn .text.move {
+    margin: 0 15px;
+  }
+  .wrap .add-btn .text > .add-text {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  .wrap .add-btn .text > .add-text.out {
+    opacity: 0;
+  }
+  .wrap .add-btn .user-wrap {
+    display: inline-block;
+  }
+  .wrap .add-btn .user-wrap > i {
+    font-size: 20px;
+    color: #4b4f56;
+  }
+  .wrap .add-btn .user-wrap > i.two {
+    position: absolute;
+    margin: -21px 0 0 12px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .wrap .add-btn .user-wrap > i.two.in {
+    opacity: 1;
+  }
