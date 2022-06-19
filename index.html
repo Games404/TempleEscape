@@ -22,8 +22,7 @@
   <script>
     // vk SDK
     vkBridge.send('VKWebAppInit');
-	showFullscrenAd();
-
+	
 	var vkBridgeInitAdCounter = 0;
     function showFullscrenAd() {
 		if(vkBridgeInitAdCounter == 0){
@@ -31,9 +30,10 @@
 		}
 		vkBridgeInitAdCounter++;
 		if(vkBridgeInitAdCounter == 5){
-			vkBridgeInitAdCounter = 0
+			vkBridgeInitAdCounter = 0;
 		}
     }
+	showFullscrenAd();
 	
     function ShowInviteBox(){
       vkBridge.send('VKWebAppShowInviteBox', {});
@@ -79,15 +79,15 @@
 				w = window.innerWidth;
 				h = window.innerHeight;
 
-				var r = 1136 / 640;
+				var r = 768 / 432;
 
 				if (w * r > window.innerHeight) {
 					w = Math.min(w, Math.ceil(h / r));
 				}
 				h = Math.floor(w * r);
 			}else {
-				w = 640;
-				h = 1136;
+				w = 432;
+				h = 768;
 			}
 
 			if(window.innerWidth > 991){
