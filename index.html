@@ -85,15 +85,15 @@
 					h = window.innerHeight - 90;
 				}
 
-				var r = 640 / 1136;
+				var r = 1136 / 640;
 
 				if (w * r > window.innerHeight) {
 					w = Math.min(w, Math.ceil(h / r));
 				}
 				h = Math.floor(w * r);
 			}else {
-				w = 1136;
-				h = 640;
+				w = 640;
+				h = 1136;
 			}
 
 			if(window.innerWidth > 991){
