@@ -21,20 +21,24 @@
 
   <script>
     // vk SDK
-    var vkBridgeInit = false;
     vkBridge.send('VKWebAppInit');
-    vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
+	ShowInviteBox();
 
+	var vkBridgeInitAdCounter = 0;
     function showFullscrenAd() {
-      if(vkBridgeInit){
-        vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
-      }else {
-        vkBridgeInit = true;
-      }
+		if(vkBridgeInitAdCounter == 0){
+			vkBridge.send("VKWebAppShowNativeAds", { ad_format:"interstitial" });
+		}
+		vkBridgeInitAdCounter++;
+		if(vkBridgeInitAdCounter == 5){
+			vkBridgeInitAdCounter = 0
+		}
     }
+	
     function ShowInviteBox(){
       vkBridge.send('VKWebAppShowInviteBox', {});
     }
+	
   </script>
 	<script src="Build/dist.loader.js"></script>
 	<script>
